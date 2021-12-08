@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import java.lang.reflect.Array;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -54,11 +53,11 @@ public class AnimalTest {
     public void validateGetFoodWithAnimalKindWhichNotExistShouldThrowExceptionWithCorrectMessage() {
         try {
             animal.getFood("Другое");
+            fail("Expected validation exception was not thrown");
         } catch (Exception e) {
             assertEquals("Неизвестный вид животного, используйте значение Травоядное или Хищник",
                     e.getMessage());
             return;
         }
-        fail("Expected validation exception was not thrown");
     }
 }

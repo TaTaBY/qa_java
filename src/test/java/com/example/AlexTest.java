@@ -1,16 +1,24 @@
 package com.example;
 
 import org.junit.Test;
-import org.mockito.Mockito;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
 import static org.junit.Assert.*;
 
-
+@RunWith(MockitoJUnitRunner.class)
 public class AlexTest {
 
-    Alex alex = new Alex();
+    @Mock
+    Feline feline;
+
+    Alex alex = new Alex(feline);
+
+    public AlexTest() throws Exception {
+    }
 
     @Test
     public void validateGetFriendsAlex() {

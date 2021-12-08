@@ -1,12 +1,9 @@
 package com.example;
 
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -57,11 +54,11 @@ public class LionTest {
     public void validateConstructorLionWithSexWhichNotExistShouldThrowExceptionWithCorrectMessage() throws Exception {
         try {
             new Lion("Другое", feline);
+            fail("Expected validation exception was not thrown");
         } catch (Exception e) {
             assertEquals("Используйте допустимые значения пола животного - самей или самка",
                     e.getMessage());
             return;
         }
-        fail("Expected validation exception was not thrown");
     }
 }

@@ -18,9 +18,6 @@ public class Lion{
         }
     }
 
-    public Lion(String sex) {
-    }
-
     public int getKittens() {
         return feline.getKittens();
     }
